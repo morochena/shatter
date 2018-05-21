@@ -1,0 +1,11 @@
+Description:
+    This generator creates new files to put your model logic. 
+
+Example:
+    rails generate shatter Thing
+
+    This will create:
+        /app/models/thing/assocations.rb
+        /app/models/thing/operations.rb
+        /app/models/thing/queries.rb
+        /app/models/thing/validations.rb
