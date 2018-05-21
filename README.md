@@ -12,7 +12,7 @@ When to use Shatter?
 Add this line to your Rails application's Gemfile:
 
 ```ruby
-gem 'shatter'
+gem 'shatter-rails'
 ```
 
 And then execute:
