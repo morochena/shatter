@@ -1,6 +1,6 @@
 # Shatter
 
-Shatter is a generator for Rails that seperates an existing model logic into separate files. I use ActiveSupport::Conern's `included do end` block to call code in the primary model file  *in the context* of that model's class. 
+Shatter is a generator for Rails that seperates an existing model logic into separate files. Shatter uses ActiveSupport::Conern's `included do end` block to call code in the primary model file  *in the context* of that model's class. 
 
 When to use Shatter? 
 - Your models are getting too fat.

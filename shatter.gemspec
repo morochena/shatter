@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Marcus Orochena"]
   spec.email         = ["marcus@orochena.net"]
 
-  spec.summary       = %q{Shatter provides files to put your Rails model code. }
-  spec.description   = %q{Shatter creates 4 files for a model. }
+  spec.summary       = %q{Shatter is a generator for Rails that seperates an existing model logic into separate files. }
+  spec.description   = %q{Shatter is a generator for Rails that seperates an existing model logic into separate files. Shatter uses ActiveSupport::Conern's `included do end` block to call code in the primary model file  *in the context* of that model's class.}
   spec.homepage      = "https://github.com/morochena/shatter"
   spec.license       = "MIT"
 
