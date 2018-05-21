@@ -27,7 +27,7 @@ Description:
     Shatter is a generator for Rails that seperates an existing model logic into separate files. 
 
 Example:
-    rails generate shatter thing
+    rails generate shatter:shatter thing
 
     This will create:
         /app/models/thing/assocations.rb
