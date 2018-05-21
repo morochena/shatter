@@ -1,12 +1,15 @@
 # Shatter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/shatter`. To experiment with that code, run `bin/console` for an interactive prompt.
+Shatter is a generator for Rails that seperates an existing model logic into separate files. I use ActiveSupport::Conern's `included do end` block to call code in the primary model file  *in the context* of that model's class. 
 
-TODO: Delete this and the text above, and describe your gem
+When to use Shatter? 
+- Your models are getting too fat.
+- You don't want to break any existing code.
+- You want to stay compatible with 'The Rails Way'. 
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your Rails application's Gemfile:
 
 ```ruby
 gem 'shatter'
@@ -15,24 +18,35 @@ gem 'shatter'
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install shatter
+    $ rails g shatter:shatter [model]
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+Description:
+    Shatter is a generator for Rails that seperates an existing model logic into separate files. 
 
-## Development
+Example:
+    rails generate shatter thing
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    This will create:
+        /app/models/thing/assocations.rb
+        /app/models/thing/operations.rb
+        /app/models/thing/queries.rb
+        /app/models/thing/validations.rb
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+    And will insert the following into /app/models/thing.rb:
+        include Thing::Associations
+        include Thing::Operations
+        include Thing::Queries
+        include Thing::Validations
+```
+
+Once you've run the generator, you can copy and paste code from your `thing.rb` model file into the appropriate file.  
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/shatter.
+Bug reports and pull requests are welcome on GitHub at https://github.com/morochena/shatter.
 
 ## License
 
